@@ -26,7 +26,7 @@ A full-stack FastAPI web application demonstrating real-world SaaS engineering w
 
 ```bash
 # Navigate to project directory
-cd "Project 4"
+cd "saas-auth-subscription-app"
 
 # Create virtual environment
 python -m venv venv
