@@ -2,10 +2,7 @@
 
 Your Stripe test keys have been added to `.env`! Here's what you need to do next:
 
-## ✅ What's Already Done
-
-- ✅ Secret Key: `sk_test_OD2vxsEFjPWJSKxw7xyPKkGo00uV6vxNLU`
-- ✅ Publishable Key: `pk_test_pOpwThyuoDpxHctEcOdoklBd00UBxLfPQo`
+## ✅ Setup Steps
 
 ## 📋 Next Steps
 

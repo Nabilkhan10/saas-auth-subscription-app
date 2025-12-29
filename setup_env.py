@@ -1,14 +1,10 @@
 """
-Setup script to create .env file with your Stripe keys
+Setup script to create .env file
 Run this script to automatically create your .env file
 """
 
 import os
 import secrets
-
-# Your Stripe keys
-STRIPE_PUBLISHABLE_KEY = "pk_test_pOpwThyuoDpxHctEcOdoklBd00UBxLfPQo"
-STRIPE_SECRET_KEY = "sk_test_OD2vxsEFjPWJSKxw7xyPKkGo00uV6vxNLU"
 
 # Generate a secure secret key
 SECRET_KEY = secrets.token_urlsafe(32)
@@ -19,9 +15,9 @@ DATABASE_URL=sqlite:///./saas_app.db
 # JWT Secret (auto-generated secure key)
 SECRET_KEY={SECRET_KEY}
 
-# Stripe Keys (Test Mode)
-STRIPE_PUBLISHABLE_KEY={STRIPE_PUBLISHABLE_KEY}
-STRIPE_SECRET_KEY={STRIPE_SECRET_KEY}
+# Stripe Keys (Test Mode) - Add your keys from Stripe Dashboard
+STRIPE_PUBLISHABLE_KEY=pk_test_your_publishable_key_here
+STRIPE_SECRET_KEY=sk_test_your_secret_key_here
 STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret_here
 
 # Stripe Price IDs (create products in Stripe dashboard and add IDs here)

@@ -1,11 +1,13 @@
 """
 Update .env file with Stripe Webhook Secret
+Usage: Edit this file to add your webhook secret, then run: python update_webhook_secret.py
 """
+
 import os
 import re
 
-# Your Stripe Webhook Secret
-WEBHOOK_SECRET = "whsec_2ac68399a14d48fee064f4364352e308dc0c6d767bd1a53a28e48a55bf69f9c8"
+# Add your Stripe Webhook Secret here (get it from Stripe CLI or Dashboard)
+WEBHOOK_SECRET = "whsec_your_webhook_secret_here"
 
 env_file = ".env"
 
@@ -13,21 +15,21 @@ env_file = ".env"
 if os.path.exists(env_file):
     with open(env_file, "r") as f:
         content = f.read()
-    
+
     # Update or add Webhook Secret
     if "STRIPE_WEBHOOK_SECRET=" in content:
         content = re.sub(
-            r'STRIPE_WEBHOOK_SECRET=.*',
-            f'STRIPE_WEBHOOK_SECRET={WEBHOOK_SECRET}',
-            content
+            r"STRIPE_WEBHOOK_SECRET=.*",
+            f"STRIPE_WEBHOOK_SECRET={WEBHOOK_SECRET}",
+            content,
         )
     else:
-        content += f'\nSTRIPE_WEBHOOK_SECRET={WEBHOOK_SECRET}'
-    
+        content += f"\nSTRIPE_WEBHOOK_SECRET={WEBHOOK_SECRET}"
+
     # Write back to file
     with open(env_file, "w") as f:
         f.write(content)
-    
+
     print("[SUCCESS] Updated .env with Stripe Webhook Secret!")
     print(f"Webhook Secret: {WEBHOOK_SECRET[:20]}...")
     print("\nYour Stripe integration is now COMPLETE!")
@@ -36,4 +38,3 @@ if os.path.exists(env_file):
     print("2. Test the full payment flow with test card: 4242 4242 4242 4242")
 else:
     print("[ERROR] .env file not found. Run setup_env.py first.")
-
